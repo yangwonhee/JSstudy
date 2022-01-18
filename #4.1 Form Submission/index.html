@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Momentum App</title>
+</head>
+<body>
+    <form id="login-form">
+        <input 
+        required
+        maxlength="15"
+        type="text" placeholder="What is your name?" />
+        <input type="submit" value="LogIn" />
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- 
+    form 내부에 있는 input은 입력될 때마다 새로고침이 됨.
+    하지만 form내부의 값 중 하나만 입력받을 때 마다 웹페이지를 매번 새로고침하는 것은 효율성이 떨어짐.
+    
+    이러한 문제점을 다음 강의에서 고치도록 함.
+ -->
