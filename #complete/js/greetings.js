@@ -28,6 +28,5 @@ if(savedUsername === null){
     loginForm.classList.remove(HIDDEN_CLASSNAME);
 } else {
     // show the greetings
-    loginForm.classList.add(HIDDEN_CLASSNAME);
     paintGreetings(savedUsername);
 }

@@ -1,6 +1,5 @@
 const toggleBG = document.querySelector('#buttonBG');
 const toggleFG = document.querySelector('#buttonID')
-// const darkMode = ;
 
 //darkmode
 function darkModeTrans(){
@@ -25,7 +24,7 @@ function toggleBtnColor() {
  
     // 버튼 이동
 function moveBtn(toggleBtn, LR) {
-    let left = null;
+    let left = 0;
     parseInt(toggleBtn.style.left, left);
     left += (LR == RIGHT_KEY) ? 5 : -5;
     if(left >= 0 && left <= 40) {
