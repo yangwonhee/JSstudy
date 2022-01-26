@@ -40,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'GowunDodum-Regular';
+  font-style: 'GowunDodum-Regular';
 }
 
 .container {
@@ -55,6 +55,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-right: var(--space-l);
+  font-family: 'GowunDodum-Regular';
 }
 
 #heading input {
@@ -67,6 +68,12 @@ body {
   padding-left: var(--space-xs);
   color: var(--main-color);
 }
+
+img {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+  }
 
 #heading input::placeholder {
   color: var(--gray-color);
@@ -129,7 +136,8 @@ body {
 .quotes {
   font-size: var(--fontsize-xs);
   padding-top: var(--space-s);
-  font-style: italic;
+  font-style: 'GowunDodum-Regular';
+
 }
 
 .quotes-section {
