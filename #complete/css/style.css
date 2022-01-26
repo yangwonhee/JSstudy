@@ -1,20 +1,22 @@
-@import 'reset.css';
+@import "reset.css";
 
 @font-face {
-    font-family: 'GowunDodum-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "GowunDodum-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
   /* colors */
   --main-color: #0dcbcb;
-  --dark-background-color: #0c2e2b;
-  --mint-color: #f1fffd;
-  --gray-color: #a8a8a8;
+  --dark-background-color: #9794f2;
+  --pink-color: #f2b4ae;
+  --blue-color: #3d46f2;
   --black-color: #000000;
   --lightgray-color: #f4f4f4;
+  --ppink-color: #f29494;
 
   /* space */
   --space-xxl: 72px;
@@ -35,12 +37,37 @@
 }
 
 body {
+    background-color: var(--lightgray-color);
+    color: var(--black-color);
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-style: 'GowunDodum-Regular';
+  font-style: "GowunDodum-Regular";
+}
+
+.dark-mode {
+  background-color: #434F59;
+  color: #ffffff;
+}
+
+.toggleBG {
+  background: #cccccc;
+  width: 70px;
+  height: 30px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+}
+
+.toggleFG {
+  background: var(--ppink-color);
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  position: relative;
+  left: 0px;
 }
 
 .container {
@@ -55,7 +82,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-right: var(--space-l);
-  font-family: 'GowunDodum-Regular';
+  font-family: "GowunDodum-Regular";
 }
 
 #heading input {
@@ -70,13 +97,13 @@ body {
 }
 
 img {
-    width: 210px;
-    height: 210px;
-    object-fit: cover;
-  }
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+}
 
 #heading input::placeholder {
-  color: var(--gray-color);
+  color: var(--blue-color);
   font-size: var(--fontsize-m);
   font-weight: 400;
 }
@@ -88,9 +115,9 @@ img {
   color: var(--main-color);
 }
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 .name-container {
   display: flex;
@@ -99,7 +126,7 @@ img {
 
 .name-container i {
   margin-left: var(--space-xs);
-  color: var(--gray-color);
+  color: var(--blue-color);
 }
 
 .name-container i:hover {
@@ -136,8 +163,7 @@ img {
 .quotes {
   font-size: var(--fontsize-xs);
   padding-top: var(--space-s);
-  font-style: 'GowunDodum-Regular';
-
+  font-style: "GowunDodum-Regular";
 }
 
 .quotes-section {
@@ -152,7 +178,7 @@ img {
   text-align: right;
 }
 
-#todolist {
+#todo-list {
   display: flex;
 }
 
@@ -166,35 +192,35 @@ h3 {
   color: var(--dark-background-color);
 }
 
-#todolist {
+#todo-list {
   display: flex;
   align-items: flex-end;
   margin-top: var(--space-xxl);
 }
 
-#todolist h3 {
+#todo-list h3 {
   padding-bottom: var(--space-s);
 }
 
-.todolist-daily .top {
+.todo-list .top {
   height: 400px;
   background-color: var(--lightgray-color);
   border-radius: 10px 10px 0 0;
 }
 
-.todolist-weekly .top {
+.todo-list2 .top {
   height: 400px;
-  background-color: var(--mint-color);
+  background-color: var(--pink-color);
   border-radius: 10px 10px 0 0;
 }
 
-#todolist input {
+#todo-list input {
   width: 300px;
   font-weight: 500;
   font-size: var(--fontsize-s);
 }
 
-.todolist-daily--box input {
+.todo-list--box input {
   background-color: var(--main-color);
   border: none;
   height: 40px;
@@ -204,17 +230,17 @@ h3 {
   margin-bottom: var(--space-xxl);
 }
 
-.todolist-daily--box input::placeholder {
+.todo-list--box input::placeholder {
   color: white;
   opacity: 0.7;
 }
 
-.todolist-weekly {
+.todo-list2 {
   padding-left: var(--space-xs);
 }
 
-.todolist-weekly--box input {
-  background-color: var(--mint-color);
+.todo-list2--box input {
+  background-color: var(--pink-color);
   border: none;
   height: 40px;
   color: var(--main-color);
@@ -222,17 +248,17 @@ h3 {
   border-radius: 0 0 10px 10px;
   margin-bottom: var(--space-xxl);
 }
-.todolist-daily--box .line {
+.todol-list--box .line {
   height: 2px;
   background-color: white;
 }
 
-.todolist-weekly--box .line {
+.todo-list2--box .line {
   height: 2px;
   background-color: var(--main-color);
 }
 
-.todolist-weekly--box input::placeholder {
+.todo-list2--box input::placeholder {
   color: var(--main-color);
   opacity: 0.7;
 }
@@ -250,18 +276,18 @@ h3 {
   padding-bottom: var(--space-xs);
 }
 
-.todolist-daily--box ul {
+.todo-list-daily--box ul {
   display: flex;
   align-items: center;
 }
-.todolist-daily--box .item,
+.todol-ist-daily--box .item,
 .todolist-weekly--box .item {
-  font-weight: 300;
+  -font-weight: 300;
 }
 
-.todolist-daily--box .delete,
+.todo-list-daily--box .delete,
 .todolist-weekly--box .delete {
-  color: gray;
+  -color: gray;
   font-size: var(--space-s);
   transition: all 0.2s ease-in-out;
 }
@@ -390,27 +416,27 @@ h3 {
     max-width: 900px;
   }
 
-  #todolist {
+  #todo-list {
     width: 100%;
     height: 804px;
     flex-direction: column;
     margin-top: 0;
   }
 
-  .todolist-daily .top,
-  .todolist-weekly .top {
+  .todo-list .top,
+  .todo-list2 .top {
     height: 260px;
   }
 
-  .todolist-weekly {
+  .todo-list2 {
     padding-left: 0;
   }
 
-  #todolist input {
+  #todo-list input {
     width: 400px;
   }
 
-  .todolist-daily--box input {
+  .todo-list--box input {
     margin-bottom: var(--space-l);
   }
 }
@@ -429,7 +455,7 @@ h3 {
     margin-right: 0;
   }
 
-  #todolist {
+  #todo-list {
     align-items: center;
   }
 
@@ -458,7 +484,7 @@ h3 {
   .backtop a::after {
     background: none repeat scroll 0 0 transparent;
     bottom: 40px;
-    content: '';
+    content: "";
     display: block;
     height: 4px;
     right: 0;
@@ -482,7 +508,7 @@ h3 {
     width: 100%;
   }
 
-  #todolist input {
+  #todo-list input {
     width: 320px;
   }
   #heading {
